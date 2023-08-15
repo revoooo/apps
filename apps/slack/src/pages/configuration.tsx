@@ -56,7 +56,7 @@ function Configuration() {
     const { name, value } = event.target as HTMLInputElement;
 
     setConfiguration((prev) =>
-      prev!.map((prevField) => (prevField.key === name ? { ...prevField, value } : prevField))
+      prev!.map((prevField) => (prevField.key === name ? { ...prevField, value } : prevField)),
     );
   };
 
@@ -121,7 +121,9 @@ function Instructions() {
       <Text variant={"heading"}>How to configure</Text>
       <Box display={"flex"} gap={2} as={"ul"} flexDirection={"column"}>
         <li>
-          <TextLink href={slackUrl.href}>1. Install Slack application</TextLink>
+          <TextLink href={slackUrl.href} newTab>
+            1. Install Slack application
+          </TextLink>
         </li>
         <li>
           <Text>
